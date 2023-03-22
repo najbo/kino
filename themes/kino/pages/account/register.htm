@@ -1,0 +1,15 @@
+url = "/registration"
+layout = "tailwindUi"
+title = "Registration form"
+
+[session]
+security = "all"
+redirect = "dashboard/show"
+
+[userRegister]
+==
+{% put header %}
+    Register a new user
+{% endput %}
+
+{% component 'userRegister' %}
