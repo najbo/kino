@@ -13,7 +13,7 @@ class UserRegister extends ComponentBase
     {
         return [
             'name' => 'UserRegister Component',
-            'description' => 'No description provided yet...'
+            'description' => 'This Component renders a register form.'
         ];
     }
 

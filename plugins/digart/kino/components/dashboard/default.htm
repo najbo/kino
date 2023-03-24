@@ -1,3 +1,10 @@
+<div>
+  Welcome {{ user.name }} !
+  <p class="pt-4">Your last login : {{ user.last_login }}</p>
+  <p>Your have been last seen on : {{ user.last_seen }}</p>
+</div>
+
+<h2 class="font-bold text-1xl py-4 text-gray-400">My favorite shows</h2>
 <div class="overflow-hidden bg-white shadow sm:rounded-md">
   <ul role="list" class="divide-y divide-gray-200">
     {% for show in __SELF__.shows %}

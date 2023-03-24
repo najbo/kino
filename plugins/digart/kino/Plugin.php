@@ -1,6 +1,9 @@
 <?php namespace DigArt\Kino;
 
 use System\Classes\PluginBase;
+use Event;
+use RainLab\User\Models\User;
+use RainLab\User\Models\UserGroup;
 
 class Plugin extends PluginBase
 {
@@ -32,4 +35,24 @@ class Plugin extends PluginBase
             'DigArt\Kino\Components\Dashboard' => 'dashboard',
         ];
     }
+
+    public function boot()
+    {
+        // Add a new registered user to the "Registered" group :
+
+        Event::listen('rainlab.user.register', function ($user) {
+
+            $group = UserGroup::whereCode('registered')->first();
+
+            $user = User::with('groups')->find($user->id);
+            $user->groups()->add($group);
+
+            return;
+            // OR :
+            $user->groups =  $group->id;
+            $user->save();
+            ray($user);
+        });
+    }
+
 }

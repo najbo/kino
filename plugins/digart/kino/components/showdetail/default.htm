@@ -39,11 +39,14 @@
           </div>
         </div>
         <div class="pt-6">This presentation will end at {{ show.human_ends_at }} approx.</div>
+
+
         <div data-request-data="{ id: {{ show.id }} }" class="pt-4">
           <button 
             data-request="onFavorite"
             data-request-flash
-            class="font-bold">
+            class="font-bold"
+            id="favorite">
          {{ count_favorite ? 'Remove from my favorites': 'Add to my favorites' }}</button>
         </div>
 

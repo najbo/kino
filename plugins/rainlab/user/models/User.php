@@ -68,6 +68,8 @@ class User extends UserBase
      */
     protected $purgeable = ['password_confirmation', 'send_invite'];
 
+    // protected $hidden = ['password', 'password_confirmation'];
+
     protected $dates = [
         'last_seen',
         'deleted_at',

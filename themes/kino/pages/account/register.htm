@@ -4,9 +4,15 @@ title = "Registration form"
 
 [session]
 security = "all"
-redirect = "dashboard/show"
+redirect = "account/login"
 
 [userRegister]
+
+[account]
+redirect = "dashboard/show"
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
 ==
 {% put header %}
     Register a new user

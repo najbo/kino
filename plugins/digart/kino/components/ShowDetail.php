@@ -76,6 +76,12 @@ class ShowDetail extends ComponentBase
         $movie_name = $show->movie->name;
         // ray($show->users()->count());
         Flash::success("Show {$movie_name} added to your favorites :-)");
-        Redirect::refresh()->with('message', 'Login Failed');
+        //Redirect::refresh()->with('message', 'Login Failed');
+
+        return;
+        
+        return [
+            '#favorite' => $this->renderPartial('site/main')
+        ];
     }
 }
